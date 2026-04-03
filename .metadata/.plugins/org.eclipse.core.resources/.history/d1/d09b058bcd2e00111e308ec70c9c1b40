@@ -1,0 +1,36 @@
+package javaprograms;
+
+import java.util.Scanner;
+
+public class PetersonNumber {
+	
+	public static int factotial(int n) {
+		if(n==0) return 1;
+		if(n==1) return 1;
+		else {
+			return factotial(n)*factotial(n-1);
+		}
+				
+	}
+	
+
+	public static void main(String[] args) {
+		
+	
+		
+		
+		Scanner sc = new Scanner(System.in);
+
+		try {
+			System.out.println("Enter a number :");
+			int f = factotial(4);
+			System.out.println(f);
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		} finally {
+			sc.close();
+		}
+	}
+}

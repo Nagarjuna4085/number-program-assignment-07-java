@@ -1,0 +1,26 @@
+package javaprograms;
+
+import java.util.Scanner;
+
+public class FascinatingNumber {
+public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+
+    System.out.println("Enter number:");
+    int n = sc.nextInt();
+    String res = n +""+(2*n)+(3*n);
+    if (res.length() != 9) {
+        System.out.println("Not a Fascinating number");
+        return;
+    }
+    for(char c='1';c<='9';c++) {
+    	if(res.indexOf(c) < 0 ||res.indexOf(c) != res.lastIndexOf(c)) {
+    		System.out.println("not a fascination number");
+    		return;
+    	}
+    }
+    System.out.println("Fascination number");
+    sc.close();
+}
+
+}	

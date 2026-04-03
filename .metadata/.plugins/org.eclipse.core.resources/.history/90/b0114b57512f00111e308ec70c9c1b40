@@ -1,0 +1,62 @@
+package javaprograms;
+
+public class Account {
+
+	private String accountNumber;
+	private int pin;
+	private double balance;
+
+	// setter
+	public Account(String accountNumber, int pin, double balance) {
+		this.accountNumber = accountNumber;
+		this.pin = pin;
+		this.balance = balance;
+
+	}
+
+	// getter
+
+	// getbalance
+	public double getBalance(int pin) {
+
+		if (this.pin == pin) {
+			return this.balance;
+		}
+		return -1.0;
+	}
+
+	// deposit
+
+	public void deposit(double amount, int pin) {
+		if (this.pin == pin) {
+			if (amount > 0) {
+				this.balance += amount;
+				System.out.println("amount deppsited successfully");
+			} else {
+				System.out.println("Invalid deposit amount.");
+			}
+		} else {
+			System.out.println("Incorrect PIN.");
+		}
+	}
+
+	// withdraw
+
+	public double withdraw(double amount, int pin) {
+		if (this.pin == pin) {
+			if (amount > 0 && this.balance > amount) {
+				this.balance -= amount;
+				return amount;
+			}else {
+                System.out.println("Insufficient funds or invalid amount.");
+            }
+		}else {
+            System.out.println("Incorrect PIN.");
+        }
+        return 0.0;
+	}
+
+	public static void main(String[] args) {
+
+	}
+}

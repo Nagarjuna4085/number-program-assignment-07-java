@@ -1,0 +1,31 @@
+package javaprograms;
+
+import java.util.Scanner;
+
+public class AutomorphicNumber {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		try {
+			int num = sc.nextInt();
+			int numLength = String.valueOf(num).length();
+			int suareOfNumber = num*num;
+			int divisor = (int) Math.pow(10, numLength);
+			int lastDigit = suareOfNumber% divisor;
+			System.out.println("las"+lastDigit);
+			if(lastDigit == num) {
+				System.out.println("automorphic number");
+			}else {
+				System.out.println("not automorphic number");
+			}
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("error.."+e);
+		}finally {
+			sc.close();
+			System.out.println("....");
+		}
+	}
+
+}

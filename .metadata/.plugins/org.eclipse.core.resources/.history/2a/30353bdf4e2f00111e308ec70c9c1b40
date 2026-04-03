@@ -1,0 +1,45 @@
+package javaprograms;
+
+import java.util.Scanner;
+
+public class ATM {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Account myAccount = new Account("123456789", 1122, 7000.0);
+		System.out.println("--- Welcome to the ATM ---");
+		System.out.print("Please enter your PIN to start: ");
+		int userPin = sc.nextInt();
+		int choice;
+		do {
+			System.out.println("\nMain Menu:");
+			System.out.println("1. Check Balance");
+			System.out.println("2. Deposit Money");
+			System.out.println("3. Withdraw Money");
+			System.out.println("4. Exit");
+			System.out.print("Select an option: ");
+
+			choice = sc.nextInt();
+
+			switch (choice) {
+			case 1:
+				double currentBalance = myAccount.getBalance(userPin);
+				if (currentBalance >= 0) {
+					System.out.println("Your current balance is: ₹" + currentBalance);
+				}
+				break;
+			case 2:
+				System.out.print("Enter amount to deposit: ");
+                double depAmount = sc.nextDouble();
+                myAccount.deposit(depAmount, userPin);
+                break;
+			case 3:
+			case 4:
+				
+
+			}
+		} while (choice != 4);
+
+	}
+
+}

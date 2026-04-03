@@ -1,0 +1,40 @@
+package javaprograms;
+
+import java.util.Scanner;
+
+public class TechNumber {
+	public static void main(String[] args) {
+		Scanner sc  = new Scanner(System.in);
+		try {
+			System.out.println("Enter number");
+			 long num = sc.nextLong();
+			
+			if(num%2!=1) {
+				System.out.println("not a tech number");
+				return;
+			}
+			int i=0;
+			long temp = num;
+			
+			while(temp > 0) {
+				i = i+1;
+			}
+			int divisor = (int) Math.pow(10, i/2);
+			int left  = (int) num/divisor;
+			int right  = (int) num%divisor;
+			System.out.println(left +"  " + right);
+			if(num == (int) Math.sqrt(left+right)) {
+				System.out.println("tech number");
+			}else {
+				System.out.println("not a tech number");
+			}
+			
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+
+}

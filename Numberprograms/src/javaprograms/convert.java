@@ -1,0 +1,65 @@
+package javaprograms;
+
+import java.util.Scanner;
+
+public class convert {
+    static String[] ones = {
+            "", "one", "two", "three", "four", "five",
+            "six", "seven", "eight", "nine"
+        };
+
+        static String[] tens = {
+            "", "", "twenty", "thirty", "forty",
+            "fifty", "sixty", "seventy", "eighty", "ninety"
+        };
+
+        static String[] teens = {
+            "ten", "eleven", "twelve", "thirteen", "fourteen",
+            "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"
+        };
+        public static void convert(int num) {
+
+            if (num == 0) {
+                System.out.println("zero");
+                return;
+            }
+
+            if (num >= 1000) {
+                System.out.print(ones[num / 1000] + " thousand ");
+                num = num % 1000;
+            }
+
+            if (num >= 100) {
+                System.out.print(ones[num / 100] + " hundred ");
+                num = num % 100;
+            }
+
+            if (num >= 20) {
+                System.out.print(tens[num / 10] + " ");
+                num = num % 10;
+            }
+
+            if (num >= 10 && num <= 19) {
+                System.out.print(teens[num - 10] + " ");
+                return;
+            }
+
+            if (num > 0) {
+                System.out.print(ones[num] + " ");
+            }
+           
+        }
+        
+        
+        
+        public static void main(String[] args) {
+        	  Scanner sc = new Scanner(System.in);
+
+              System.out.println("Enter a number:");
+              int num = sc.nextInt();
+
+              System.out.print("In words: ");
+              convert(num);
+		}
+
+}

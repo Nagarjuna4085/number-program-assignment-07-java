@@ -1,0 +1,35 @@
+package javaprograms;
+
+import java.util.Scanner;
+
+public class TechNumber {
+	public static void main(String[] args) {
+		Scanner sc  = new Scanner(System.in);
+		try {
+			System.out.println("Enter number");
+			 long num = sc.nextLong();
+			
+			if(num%2!=1) {
+				System.out.println("not a tech number");
+				return;
+			}
+			int i=1;
+			long temp = num;
+			int sum =0;
+			
+			while(temp > 0) {
+				long r = temp%10;
+				sum+=r;
+				i = i+1;
+				temp = temp/10;					
+			}
+			System.out.println(sum+" "+i);
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+
+}

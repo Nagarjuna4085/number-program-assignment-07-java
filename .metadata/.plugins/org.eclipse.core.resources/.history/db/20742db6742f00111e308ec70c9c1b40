@@ -1,0 +1,52 @@
+package javaprograms;
+
+import java.util.Scanner;
+
+public class EmirpNumber {
+	public static boolean isPrime(int n) {
+		for(int i =2;i<n;i++) {
+			if(n%i == 0) {
+				return false;
+			}
+		}
+		return true;
+		
+	}
+	public static void main(String[] args) { 
+		//13
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter a number");
+		int num = sc.nextInt();
+		
+		boolean checkPrime = isPrime(num);
+		if(checkPrime == false) {
+			System.out.println("not an emirp number");
+			return;
+		}
+		int temp = num;
+//		123
+		int reversedNum = 0;
+		while(temp>0) {
+			int r = temp%10;
+			reversedNum = (reversedNum*10) + r;
+			temp = temp/10;			
+		} 
+		//13 == 31
+		if(temp == reversedNum) {
+			System.out.println("not an EmirpNumber");
+			return;
+		}
+		
+		boolean checkPrime1 = isPrime(reversedNum);
+		if(checkPrime1 == false) {
+			System.out.println("not an emirp number");
+			return;
+		}
+		
+		if(checkPrime && checkPrime1) {
+			System.out.println("is an emirpnumber");
+		}
+		
+	}
+
+}

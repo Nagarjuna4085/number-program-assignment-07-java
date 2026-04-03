@@ -1,0 +1,28 @@
+package javaprograms;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Autobiographical {
+	
+// 1210
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a number:---");
+		int num = sc.nextInt();
+		String s = String.valueOf(num);
+		Map<Character,Integer> fr = new HashMap<>();
+				
+		for(int i=0;i<s.length();i++) {
+			if(!fr.containsKey(s.charAt(i))) {
+				fr.put(s.charAt(i),1);
+			}else {
+				fr.put(s.charAt(i),fr.get(s.charAt(i))+1);
+				
+			}
+			
+		}
+		System.out.println(fr);
+	}
+}
